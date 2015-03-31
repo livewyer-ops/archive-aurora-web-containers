@@ -25,3 +25,9 @@ docker build -t registry.livewyer.com/mysql:$DATETIME -f mysql.dockerfile .
 docker tag -f registry.livewyer.com/mysql:$DATETIME registry.livewyer.com/mysql:latest
 docker push registry.livewyer.com/mysql:$DATETIME
 docker push registry.livewyer.com/mysql:latest
+
+#build glusterfs
+docker build -t registry.livewyer.com/glusterfs:$DATETIME -f glusterfs.dockerfile .
+docker tag -f registry.livewyer.com/glusterfs:$DATETIME registry.livewyer.com/glusterfs:latest
+docker push registry.livewyer.com/glusterfs:$DATETIME
+docker push registry.livewyer.com/glusterfs:latest
