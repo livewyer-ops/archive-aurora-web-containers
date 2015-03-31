@@ -43,3 +43,5 @@ docker build -t registry.livewyer.com/redis:$DATETIME -f redis.dockerfile .
 docker tag -f registry.livewyer.com/redis:$DATETIME registry.livewyer.com/redis:latest
 docker push registry.livewyer.com/redis:$DATETIME
 docker push registry.livewyer.com/redis:latest
+
+echo "$DATETIME" > aurora_jobs/latest
