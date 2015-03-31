@@ -13,4 +13,4 @@ jobs = [
           role = 'php-interpreter',
           name = 'php5-fpm',
           task = php5_fpm,
-          container = Container(docker = Docker(image = 'registry.livewyer.com/php5-fpm:2015-03-31-1510')))]
+          container = Container(docker = Docker(image = 'registry.livewyer.com/php5-fpm:2015-03-31-1542')))]
