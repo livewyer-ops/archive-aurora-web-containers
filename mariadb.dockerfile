@@ -8,4 +8,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server
 
 ADD init.sql /init.sql
 
+EXPOSE 3306
+
 CMD ["mysqld", "--init-file=/init.sql"]
