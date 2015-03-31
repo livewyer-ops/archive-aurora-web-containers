@@ -26,14 +26,20 @@ docker tag -f registry.livewyer.com/mysql:$DATETIME registry.livewyer.com/mysql:
 docker push registry.livewyer.com/mysql:$DATETIME
 docker push registry.livewyer.com/mysql:latest
 
-#build glusterfs
+# Build glusterfs
 docker build -t registry.livewyer.com/glusterfs:$DATETIME -f glusterfs.dockerfile .
 docker tag -f registry.livewyer.com/glusterfs:$DATETIME registry.livewyer.com/glusterfs:latest
 docker push registry.livewyer.com/glusterfs:$DATETIME
 docker push registry.livewyer.com/glusterfs:latest
 
-#build mariadb
+# Build mariadb
 docker build -t registry.livewyer.com/mariadb:$DATETIME -f mariadb.dockerfile .
 docker tag -f registry.livewyer.com/mariadb:$DATETIME registry.livewyer.com/mariadb:latest
 docker push registry.livewyer.com/mariadb:$DATETIME
 docker push registry.livewyer.com/mariadb:latest
+
+# Build redis
+docker build -t registry.livewyer.com/redis:$DATETIME -f redis.dockerfile .
+docker tag -f registry.livewyer.com/redis:$DATETIME registry.livewyer.com/redis:latest
+docker push registry.livewyer.com/redis:$DATETIME
+docker push registry.livewyer.com/redis:latest
