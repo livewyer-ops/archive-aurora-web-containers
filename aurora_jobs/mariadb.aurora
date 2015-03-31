@@ -1,0 +1,18 @@
+mariadb_proc = Process(
+    name="mariadb_process",
+    cmdline="mysqld --init-file=/init.sql")
+
+mariadb_task = Task(
+  name = 'mariadb task',
+  processes = [mariadb_proc],
+  resources = Resources(cpu = 1, ram = 64*MB, disk=8*MB))
+
+jobs = [
+  Service(cluster = 'devcluster',
+          environment = 'devel',
+          role = 'db-server',
+          name = 'mariadb',
+          task = mariadb_task,
+          container = Container(docker = Docker(image = 'registry.livewyer.com/mariadb:2015-03-31-1355')))]
+
+aurora job create devcluster/db-server/devel/mariadb mariadb.aurora

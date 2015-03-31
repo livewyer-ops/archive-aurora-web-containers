@@ -1,0 +1,16 @@
+nginx_proc = Process(
+    name="nginx_process",
+    cmdline="nginx")
+
+nginx_task = Task(
+  name = 'nginx task',
+  processes = [nginx_proc],
+  resources = Resources(cpu = 1, ram = 64*MB, disk=8*MB))
+
+jobs = [
+  Service(cluster = 'devcluster',
+          environment = 'devel',
+          role = 'web-server',
+          name = 'nginx',
+          task = nginx_task,
+          container = Container(docker = Docker(image = 'registry.livewyer.com/nginx:2015-03-30-1612')))]
