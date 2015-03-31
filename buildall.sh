@@ -31,3 +31,9 @@ docker build -t registry.livewyer.com/glusterfs:$DATETIME -f glusterfs.dockerfil
 docker tag -f registry.livewyer.com/glusterfs:$DATETIME registry.livewyer.com/glusterfs:latest
 docker push registry.livewyer.com/glusterfs:$DATETIME
 docker push registry.livewyer.com/glusterfs:latest
+
+#build mariadb
+docker build -t registry.livewyer.com/mariadb:$DATETIME -f mariadb.dockerfile .
+docker tag -f registry.livewyer.com/mariadb:$DATETIME registry.livewyer.com/mariadb:latest
+docker push registry.livewyer.com/mariadb:$DATETIME
+docker push registry.livewyer.com/mariadb:latest
