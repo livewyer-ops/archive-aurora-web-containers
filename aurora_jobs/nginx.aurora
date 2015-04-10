@@ -17,4 +17,4 @@ jobs = [
           role = 'web-server',
           name = 'nginx',
           task = nginx_task,
-          container = Container(docker = Docker(image = 'registry.livewyer.com/nginx:2015-04-10-1517')))]
+          container = Container(docker = Docker(image = 'registry.livewyer.com/nginx:2015-04-10-1541')))]
