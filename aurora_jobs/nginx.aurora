@@ -2,9 +2,13 @@ nginx_proc = Process(
     name="nginx_process",
     cmdline="nginx")
 
+consul_template_proc = Process(
+    name="consul_template",
+    cmdline="consul-template -consul=172.17.42.1:8500 -template "/nginx.template:/etc/nginx/nginx.conf:nginx -s reload")
+
 nginx_task = Task(
   name = 'nginx task',
-  processes = [nginx_proc],
+  processes = [nginx_proc, consul_template_proc],
   resources = Resources(cpu = 0.1, ram = 32*MB, disk=8*MB))
 
 jobs = [
