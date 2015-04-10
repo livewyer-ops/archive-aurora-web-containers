@@ -61,7 +61,7 @@ http {
         access_log      /var/log/nginx/access.log;
         error_log       /var/log/nginx/error.log error;
 
-        root            /srv/website;
+        root            /srv/drupal-7.35;
         index           index.html index.php;
 
 	location / {
