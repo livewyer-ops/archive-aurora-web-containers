@@ -4,7 +4,7 @@ nginx_proc = Process(
 
 consul_template_proc = Process(
     name="consul_template",
-    cmdline="consul-template -consul=172.17.42.1:8500 -template "/nginx.template:/etc/nginx/nginx.conf:nginx -s reload")
+    cmdline="consul-template -consul=172.17.42.1:8500 -template \"/nginx.template:/etc/nginx/nginx.conf:nginx -s reload\"", max_failures=10)
 
 nginx_task = Task(
   name = 'nginx task',
