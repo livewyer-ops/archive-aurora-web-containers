@@ -6,7 +6,7 @@ RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a
     && apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server
 
-ADD init.sql /init.sql
+ADD Config/init.sql /init.sql
 
 EXPOSE 3306
 
