@@ -5,7 +5,7 @@ nginx_proc = Process(
 nginx_task = Task(
   name = 'nginx task',
   processes = [nginx_proc],
-  resources = Resources(cpu = 0.1, ram = 64*MB, disk=8*MB))
+  resources = Resources(cpu = 0.1, ram = 32*MB, disk=8*MB))
 
 jobs = [
   Service(cluster = 'devcluster',
